@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>查看详情</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0,minimal-ui">
+    <link href="css/weuix.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body ontouchstart style="background-color: #f8f8f8;">
+    <form id="form">
+        <div class="weui_cells weui_cells_form">
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">预约号</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input id="yyyw" class="weui_input" type="text" value="bs11111111" placeholder="" />
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">办理日期</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input id="yyDate" class="weui_input" type="text" value="2017-06-15" placeholder="" />
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">预约业务</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input id="szdq" class="weui_input" type="text" value="商品房转移登记" placeholder="" />
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">办理窗口</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input" type="text" value="15号窗口" placeholder="" />
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">办理地点</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input" type="text" value="XX区不动产中心" />
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">房产证号/不动产权证号</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input" type="text" value="XXXXXXXXXXX" />
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">坐落</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input" type="text" value="XX区XX村XX户101号" />
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">附件材料</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <a href="javascript:;">查看附件材料</a>
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">申请人</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input" type="text" value="张某" />
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">证件号</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input" type="text" value="182811198806272810" />
+                </div>
+            </div>
+        </div>
+        <div class="weui_btn_area weui_btn_area_inline">
+            <a id="formSubmitBtn" href="javascript:" class="weui_btn bg-blue">取消预约</a>
+        </div>
+    </form>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/picker.js"></script>
+    <script>
+        $(function() {
+            //办理业务下拉框
+            $("#yyyw").picker({
+                title: "预约业务",
+                toolbarCloseText: '确定',
+                cols: [{
+                    textAlign: 'center',
+                    values: ['商品房转移登记', '存量房转移登记', '一般抵押登记', '最高额抵押登记']
+                }]
+            });
+            //日期选择
+            $("#yyDate").datetimePicker({
+                title: "办理日期",
+                m: 1
+            });
+            //表单提交
+            $("#formSubmitBtn").on("click", function() {
+                var data = {
+                    "sqr": $("#sqr").val(),
+                    "zjh": $("#zjh").val(),
+                    "sj": $("#sj").val(),
+                    "ywbl": $("#ywbl").val(),
+                    "zl": $("#zl").val(),
+                    "yyDate": $("#yyDate").val(),
+                }
+                $.toast("提交成功");
+                //$.toast("提交失败", "forbidden");
+            });
+        });
+    </script>
+</body>
+
+</html>

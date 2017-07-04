@@ -1,0 +1,10 @@
+{
+    "token": "xiaobog",
+    "appID": "wx1966f010d41c8301",
+    "appScrect": "ff43ca8431e693c6ddd43b53b8d609ba",
+    "apiDomain": "https://api.weixin.qq.com/",
+    "apiURL": {
+        "accessTokenApi": "%scgi-bin/token?grant_type=client_credential&appid=%s&secret=%s",
+        "createMenu": "%scgi-bin/menu/create?access_token=%s"
+    }
+}

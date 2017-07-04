@@ -1,0 +1,29 @@
+{
+    "button": [{
+            "type": "view",
+            "name": "xiaobog",
+            "url": "http://xiaobog.vicp.io/"
+        },
+        {
+            "type": "click",
+            "name": "今日推荐",
+            "key": "today_recommend"
+        },
+        {
+            "name": "xiaobog",
+            "sub_button": [{
+                "type": "view",
+                "name": "个人中心",
+                "url": "http://xiaobog.vicp.io/个人中心.html"
+            }, {
+                "type": "view",
+                "name": "通知公告",
+                "url": "http://xiaobog.vicp.io/通知公告.html"
+            }, {
+                "type": "view",
+                "name": "预约取号",
+                "url": "http://xiaobog.vicp.io/预约取号.html"
+            }]
+        }
+    ]
+}

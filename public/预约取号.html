@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>预约取号</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0,minimal-ui">
+    <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.0/weui.min.css">
+    <link href="./css/weuix.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body ontouchstart style="background-color: #f8f8f8;">
+    <form id="form">
+        <div class="weui_cells weui_cells_form">
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">预约业务</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input id="yyyw" class="weui_input" type="text" value="" placeholder="请选择业务" />
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">预约日期</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input id="yyDate" class="weui_input" type="text" value="" placeholder="请选择日期" />
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">所在地区</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input id="szdq" class="weui_input" type="text" value="" placeholder="所在地区" />
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">坐落</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input" type="text" value="" placeholder="请输入坐落" />
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">办理地点</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input" type="text" value="XX区不动产中心" />
+                </div>
+            </div>
+        </div>
+        <div class="weui_btn_area weui_btn_area_inline">
+            <a id="formSubmitBtn1" href="javascript:" class="weui_btn bg-blue">返回</a>
+            <a id="formSubmitBtn" href="javascript:" class="weui_btn bg-blue">提交</a>
+        </div>
+    </form>
+    <script src="./js/zepto.min.js"></script>
+    <script src="./js/picker.js"></script>
+    <script src="./js/picker-city.js"></script>
+    <script>
+        $(function() {
+            //办理业务下拉框
+            $("#yyyw").picker({
+                title: "预约业务",
+                toolbarCloseText: '确定',
+                cols: [{
+                    textAlign: 'center',
+                    values: ['商品房转移登记', '存量房转移登记', '一般抵押登记', '最高额抵押登记']
+                }]
+            });
+            $("#szdq").cityPicker({
+                title: "选择省市县"
+            });
+            //日期选择
+            var currentDate = new Date();
+            var year = currentDate.getFullYear();
+            var month = currentDate.getMonth() + 1;
+            var day = currentDate.getDate();
+            var startDate = year + '-' + month + "-" + day;
+            var data1 = year + '-' + month + "-" + (day + 1);
+            var data2 = year + '-' + month + "-" + (day + 2);
+            var data3 = year + '-' + month + "-" + (day + 3);
+            var data4 = year + '-' + month + "-" + (day + 4);
+            //日期选择
+            $("#yyDate").picker({
+                title: "预约日期",
+                toolbarCloseText: '确定',
+                cols: [{
+                    textAlign: 'center',
+                    values: [startDate, data1, data2, data3, data4]
+                }]
+            });
+            //表单提交
+            $("#formSubmitBtn").on("click", function() {
+                var data = {
+                    "sqr": $("#sqr").val(),
+                    "zjh": $("#zjh").val(),
+                    "sj": $("#sj").val(),
+                    "ywbl": $("#ywbl").val(),
+                    "zl": $("#zl").val(),
+                    "yyDate": $("#yyDate").val(),
+                }
+                $.toast("提交成功");
+                //$.toast("提交失败", "forbidden");
+            });
+        });
+    </script>
+</body>
+
+</html>

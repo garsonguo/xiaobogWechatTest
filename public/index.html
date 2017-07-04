@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>预约登记查询</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0,minimal-ui">
+    <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.0/weui.min.css">
+    <link href="./css/weuix.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body ontouchstart style="background-color: #f8f8f8;">
+    <div class="weui-header bg-blue">
+        <h1 class="weui-header-title">
+            预约登记查询
+        </h1>
+    </div>
+    <div class="weui_tab " style="height:44px;" id="navbar">
+        <div class="weui_navbar" style="height:44px;">
+            <div class="weui_navbar_item">
+                当前预约
+            </div>
+            <div class="weui_navbar_item">
+                历史预约
+            </div>
+        </div>
+    </div>
+    <div id="yyzt">
+        <a href="查看详情.html">
+            <div class="weui-form-preview">
+                <div class="weui-form-preview-hd">
+                    <label class="weui-form-preview-label">预约号</label>
+                    <em class="weui-form-preview-value">001</em>
+                </div>
+                <div class="weui-form-preview-bd">
+                    <p>
+                        <label class="weui-form-preview-label">预约状态</label>
+                        <span class="weui-form-preview-value">已受理</span>
+                    </p>
+                    <p>
+                        <label class="weui-form-preview-label">预约业务</label>
+                        <span class="weui-form-preview-value">商品房转移登记</span>
+                    </p>
+                    <p>
+                        <label class="weui-form-preview-label">办理时间</label>
+                        <span class="weui-form-preview-value">2017-06-15</span>
+                    </p>
+                    <p>
+                        <label class="weui-form-preview-label">提交时间</label>
+                        <span class="weui-form-preview-value">2017-06-15</span>
+                    </p>
+                </div>
+            </div>
+        </a>
+        <a href="查看详情.html">
+            <div class="weui-form-preview">
+                <div class="weui-form-preview-hd">
+                    <label class="weui-form-preview-label">预约号</label>
+                    <em class="weui-form-preview-value">002</em>
+                </div>
+                <div class="weui-form-preview-bd">
+                    <p>
+                        <label class="weui-form-preview-label">预约状态</label>
+                        <span class="weui-form-preview-value">已受理</span>
+                    </p>
+                    <p>
+                        <label class="weui-form-preview-label">预约业务</label>
+                        <span class="weui-form-preview-value">商品房转移登记</span>
+                    </p>
+                    <p>
+                        <label class="weui-form-preview-label">办理时间</label>
+                        <span class="weui-form-preview-value">2017-06-15</span>
+                    </p>
+                    <p>
+                        <label class="weui-form-preview-label">提交时间</label>
+                        <span class="weui-form-preview-value">2017-06-15</span>
+                    </p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div id="lsyy" style="display:none;">
+        <form id="form">
+            <div class="weui_cells weui_cells_form">
+                <div class="weui_cell">
+                    <div class="weui_cell_hd"><label class="weui_label">预约起始日期</label></div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <input id="yyqsDate" class="weui_input" type="text" value="" placeholder="请选择日期" />
+                    </div>
+                </div>
+                <div class="weui_cell">
+                    <div class="weui_cell_hd"><label class="weui_label">预约结束日期</label></div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <input id="yyjsDate" class="weui_input" type="text" value="" placeholder="请选择日期" />
+                    </div>
+                </div>
+                <div class="weui_cell">
+                    <div class="weui_cell_hd"><label class="weui_label">预约业务</label></div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <input id="szdq" class="weui_input" type="text" value="" placeholder="请选择地区" />
+                    </div>
+                </div>
+                <div class="weui_cell">
+                    <div class="weui_cell_hd"><label class="weui_label">预约号</label></div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <input class="weui_input" type="text" value="" placeholder="请输入坐落" />
+                    </div>
+                </div>
+            </div>
+            <div class="weui_btn_area weui_btn_area_inline">
+                <a href="javascript:" id="cx" class="weui_btn bg-blue">查询</a>
+            </div>
+        </form>
+    </div>
+    <script src="./js/zepto.min.js"></script>
+    <script src="./js/picker.js"></script>
+    <script>
+        $(function() {
+            //默认选中第一个tab
+            $('#navbar').tab({
+                defaultIndex: 0,
+                activeClass: "tab-green"
+            });
+            //日期选择
+            $("#yyqsDate").datetimePicker({
+                title: "预约起始日期",
+                m: 1
+            });
+            $("#yyjsDate").datetimePicker({
+                title: "预约结束日期",
+                m: 1
+            });
+
+            //加载数据
+            $('.weui_navbar_item').on('click', function() {
+                var data = $(this)[0].outerText;
+                if (data == "当前预约") {
+                    $("#lsyy").css("display", "none");
+                    $("#yyzt").css("display", "block");
+                } else {
+                    $("#lsyy").css("display", "block");
+                    $("#yyzt").css("display", "none");
+                }
+            });
+
+            $("#cx").click(function() {
+                var qssj = $("#yyqsDate").val();
+                var jssj = $("#yyjsDate").val();
+                var qssjArray = qssj.split("-");
+                var jssjArray = jssj.split("-");
+                if (qssjArray[0] > jssjArray[0] || qssjArray[1] > jssjArray[1] || qssjArray[2] > jssjArray[2]) {
+                    $.toptips('预约起始日期不能大于预约结束日期');
+                    return false;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

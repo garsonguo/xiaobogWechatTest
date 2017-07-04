@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>办事指南</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=0,minimal-ui">
+    <link href="./css/weuix.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="weui_tab " style="height:44px;" id="navbar">
+        <div class="weui_navbar" style="height:44px;">
+            <div class="weui_navbar_item">
+                通知公告
+            </div>
+            <div class="weui_navbar_item">
+                政策法规
+            </div>
+        </div>
+        <div class="weui_tab_content">
+            <div class="weui-loadmore" style="display:none;">
+                <i class="weui-loading"></i>
+                <span class="weui-loadmore-tips">正在加载</span>
+            </div>
+            <div class="weui_panel">
+                <div class="weui_panel_bd">
+                    <div class="weui_cells weui_cells_access">
+                        <a class="weixin-li" href="javascript:;">
+                            <div class="li-sm">
+                                <span class="li-sz">1</span>国土资源局关于做好不动产登记信息若干意见等等等关于做好不动产登记信
+                            </div>
+                            <div class="li-rq">
+                                2017-06-26
+                            </div>
+                        </a>
+                        <a class="weixin-li" href="javascript:;">
+                            <div class="li-sm">
+                                <span class="li-sz">2</span>国土资源局关于做好不动产登记信息若干
+                            </div>
+                            <div class="li-rq">
+                                2017-06-26
+                            </div>
+                        </a>
+                        <a class="weixin-li" href="javascript:;">
+                            <div class="li-sm">
+                                <span class="li-sz">3</span>国土资源局关于做好不动产登记信息若干意见等等等
+                            </div>
+                            <div class="li-rq">
+                                2017-06-26
+                            </div>
+                        </a>
+                        <a class="weixin-li" href="javascript:;">
+                            <div class="li-sm">
+                                <span class="li-sz">4</span>国土资源局关于做好不动产登记信息若干意见等等等关于做好不动产登
+                            </div>
+                            <div class="li-rq">
+                                2017-06-26
+                            </div>
+                        </a>
+                        <a class="weixin-li" href="javascript:;">
+                            <div class="li-sm">
+                                <span class="li-sz">5</span>国土资源局关于做好不动产登记信息若干意见等等等关于做好不动产
+                            </div>
+                            <div class="li-rq">
+                                2017-06-26
+                            </div>
+                        </a>
+                        <a class="weixin-li" href="javascript:;">
+                            <div class="li-sm">
+                                <span class="li-sz">6</span>国土资源局关于做好不动产登记信息若干意见等等等关于做好不动产
+                            </div>
+                            <div class="li-rq">
+                                2017-06-26
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/zepto.min.js"></script>
+    <script src="./js/updown.js"></script>
+    <script>
+        $(function() {
+            var myChat = new MyChat();
+            //默认选中第一个tab
+            $('#navbar').tab({
+                defaultIndex: 0,
+                activeClass: "tab-green"
+            });
+        })
+    </script>
+</body>
+
+</html>

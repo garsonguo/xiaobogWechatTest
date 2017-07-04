@@ -1,0 +1,103 @@
+.weui_tab_content {
+    padding-top: 45px;
+    background-color: #fff;
+}
+
+.weui_panel {
+    margin-top: 0;
+    position: initial;
+}
+
+.slide .slide-desc {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.yycg {
+    background-color: #18b4ed;
+    margin: 30px 30px 30px 100px;
+    padding: 40px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.pic-tx {
+    position: absolute;
+    top: 77px;
+    left: 20px;
+}
+
+.pic-tx>img {
+    border-radius: 5px;
+    border: 1px solid#18b4ed;
+}
+
+.lxwm-ul li img {
+    display: inline-block;
+    width: 20px;
+}
+
+.content-l {
+    width: 50%;
+    float: left;
+    padding: 5px;
+}
+
+.content-l p {
+    font-size: 14px;
+}
+
+.content {
+    overflow: hidden;
+    color: #3e3e3e;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.content-r {
+    width: 40%;
+    float: right;
+    padding: 5px;
+}
+
+.content-r img {
+    width: 100%;
+}
+
+.icon-85 {
+    color: #18b4ed;
+}
+
+.grxx {
+    margin-right: 8px;
+    margin-bottom: -3px;
+}
+
+.weixin-li {
+    padding: 10px 15px;
+    display: block;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+}
+
+.li-sm {
+    line-height: 2;
+    font-size: 16px;
+}
+
+.li-rq {
+    text-align: right;
+    color: #999;
+}
+
+.li-sz {
+    display: inline-block;
+    background-color: #18b4ed;
+    color: #fff;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    margin-right: 8px;
+    border-radius: 3px;
+}
