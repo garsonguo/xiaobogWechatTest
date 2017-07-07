@@ -101,3 +101,7 @@
     margin-right: 8px;
     border-radius: 3px;
 }
+
+.weui-picker__action {
+    color: #04be02;
+}
